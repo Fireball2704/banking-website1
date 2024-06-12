@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Customers</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+        }
+
+        .title {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .customer-list {
+            list-style: none;
+            padding: 0;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .customer-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .customer-item img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .customer-info {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .customer-info a {
+            display: inline-block;
+            background-color: #f77a14;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            width: 100%; /* Ensures buttons have the same width */
+            max-width: 200px; /* Adjust based on your preference */
+            box-sizing: border-box; /* Includes padding in the width calculation */
+        }
+
+        .customer-info a:hover {
+            background-color: #e66910;
+        }
+
+        .btn {
+            background-color: #f77a14;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 20px 0;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .btn:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">All Customers</h1>
+        <h2>Click customer to transfer money</h2>
+        <ul class="customer-list">
+            <% customers.forEach(customer => { %>
+                <li class="customer-item">
+                    <img src="/assets/dp.jpg" alt="Profile Image" class="image">
+                    <div class="customer-info">
+                        <a href="/customer/<%= customer.id %>"><%= customer.name %></a>
+                    </div>
+                </li>
+            <% }); %>
+        </ul>
+        <a href="/" class="btn">Back to Home</a>
+    </div>
+</body>
+</html>

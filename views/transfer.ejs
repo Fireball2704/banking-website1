@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transfer Money</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Transfer Money</h1>
+        <form action="/transfer" method="POST" class="transfer-form">
+            <label for="fromCustomerId">Select Customer to Transfer From:</label>
+            <select name="fromCustomerId" id="fromCustomerId" class="select-box">
+                <% customers.forEach(customer => { %>
+                    <option value="<%= customer.id %>"><%= customer.name %> - Rs<%= customer.balance %></option>
+                <% }); %>
+            </select>
+            <br><br>
+            <label for="toCustomerId">Select Customer to Transfer To:</label>
+            <select name="toCustomerId" id="toCustomerId" class="select-box">
+                <% customers.forEach(customer => { %>
+                    <option value="<%= customer.id %>"><%= customer.name %> - Rs<%= customer.balance %></option>
+                <% }); %>
+            </select>
+            <br><br>
+            <label for="amount">Amount:</label>
+            <input type="number" name="amount" id="amount" required class="input-field">
+            <br><br>
+            <button type="submit" class="btn">Transfer</button>
+        </form>
+        <a href="/customers" class="link">Back to Customers</a>
+    </div>
+</body>
+</html>
