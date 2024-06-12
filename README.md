@@ -1,4 +1,4 @@
-# Online Banking Website
+# Basic Banking Website
 
 ## Overview
 The Online Banking Website is a simple web application built using Node.js, Express.js, EJS, and MySQL. It provides basic banking functionalities such as viewing all customers, selecting and viewing one customer, transferring money between customers, and viewing all customers again.
